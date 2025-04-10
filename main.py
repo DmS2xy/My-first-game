@@ -2,17 +2,14 @@ import pygame
 import os
 import sys
 
-# Получение пути к ресурсам
 def resource_path(relative_path):
     try:
-        # PyInstaller создаёт временную папку _MEIPASS
         base_path = sys._MEIPASS
     except AttributeError:
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, relative_path)
 
-# Пример использования
 icon_path = resource_path("icons/icon.png")
 
 
@@ -20,7 +17,7 @@ icon_path = resource_path("icons/icon.png")
 clock = pygame.time.Clock()
 
 pygame.init()
-screen = pygame.display.set_mode((618, 359)) #,  flags=pygame.NOFRAME для того чтоб запускать без рамок
+screen = pygame.display.set_mode((618, 359)) 
 pygame.display.set_caption("DmS game v1.0")
 icon=pygame.image.load(icon_path + "icons/icon.png").convert_alpha()
 pygame.display.set_icon(icon)
